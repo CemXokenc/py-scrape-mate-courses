@@ -42,7 +42,8 @@ def parse_one_course(course: Tag) -> Course:
 
     return Course(
         name=course.select_one(".FUm52q_title").get_text(strip=True),
-        short_description=course.select_one(".FUm52q_description").get_text(strip=True),
+        short_description=course.select_one(".FUm52q_description")
+        .get_text(strip=True),
         duration=course.select_one(".FUm52q_duration").get_text(strip=True),
         modules_count=modules_count,
         topics_count=topics_count,
